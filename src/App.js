@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Menu from './components/Menu';
+
 const MenuItem = (props) => <div>{props.text}</div>;
 
-const Menu = (props) => {
-  return (
-    <div className="menu">{props.items.map(item => <MenuItem text={item} />)}</div>
-  );
-};
+// const Menu = (props) => {
+//   return (
+//     <div className="menu">{props.items.map(item => <MenuItem text={item} />)}</div>
+//   );
+// };
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +39,8 @@ class App extends Component {
     let menuItems = ['Settings', 'Feedback', 'About'];
     return (
       <div className="App">
-        <Menu items={menuItems} />
+        <Menu />
+        {/* <Menu items={menuItems} /> */}
         <div>{Math.random()}</div>
         
       </div>
