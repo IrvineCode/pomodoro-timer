@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Menu from './components/Menu';
-
-const MenuItem = (props) => <div>{props.text}</div>;
-
-// const Menu = (props) => {
-//   return (
-//     <div className="menu">{props.items.map(item => <MenuItem text={item} />)}</div>
-//   );
-// };
+import DBTest from './containers/DBTest';
 
 class App extends Component {
   constructor(props) {
@@ -36,13 +29,12 @@ class App extends Component {
   };
 
   render() {
-    let menuItems = ['Settings', 'Feedback', 'About'];
     return (
-      <div className="App">
+      <div className="container">
         <Menu />
-        {/* <Menu items={menuItems} /> */}
-        <div>{Math.random()}</div>
-        
+        <DBTest />
+        <div><h1>Pomodoro Timer v{parseInt(Math.random()*101)}</h1></div>
+        <button type="button" class="btn btn-info">Start Timer</button>
       </div>
     );
   };
