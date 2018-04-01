@@ -33,6 +33,7 @@ class App extends Component {
       <div className="container">
         <Menu />
         <DBTest />
+        <div>hi</div>
         <div><h1>Pomodoro Timer v{parseInt(Math.random()*101)}</h1></div>
         <button type="button" class="btn btn-info">Start Timer</button>
       </div>
