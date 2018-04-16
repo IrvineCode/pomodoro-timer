@@ -5,16 +5,19 @@ export default class Timer extends React.Component  {
         super(props);
 
         this.state = {
-            time: new Date(),
-            minLeft: undefined,
-            secLeft: undefined
+            startTime: this.props.startTime,
+            elapsed: 0,
+            minLeft: 0,
+            secLeft: 0
         };
+        
+        this.updateTime = this.updateTime.bind(this);
 
-        setInterval(this.updateTime.bind(this), 1000);
+        setInterval(this.updateTime, 1000);
     };
 
     updateTime() {
-        if (!this.props.started) return;
+        if (this.startTime === undefined) return;
         let countDownTime = this.getEndTime();
     
         let now = this.state.time.getTime();
@@ -25,7 +28,7 @@ export default class Timer extends React.Component  {
         });
     };
 
-    getEndTime = () => {
+    getEndTime() {
         let now = new Date(this.state.time.valueOf());
         now.setTime(now.getTime() + 1500000);
         return now.getTime();
@@ -34,7 +37,7 @@ export default class Timer extends React.Component  {
     render() {
         return (
             <div>
-                <h2>{(this.state.minLeft === undefined) ? ('\n') : (this.state.minLeft + "m " + this.state.secLeft + "s")}</h2>
+                <h2>{this.state.minLeft + "m " + this.state.secLeft + "s"}</h2>
             </div>
         );
     };
