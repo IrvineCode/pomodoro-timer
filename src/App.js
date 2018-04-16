@@ -16,6 +16,8 @@ class App extends Component {
       // loading: false
     };
 
+    this.handleClick = this.handleClick.bind(this);
+
     // this.loadData();
   };
 
@@ -43,7 +45,7 @@ class App extends Component {
         {/* <DBTest /> */}
         <div><h1>Pomodoro Timer v{parseInt(Math.random()*101, 10)}</h1></div>
         <Timer startTime={this.state.startTime} />
-        <button type="button" className="btn btn-info" onClick={this.handleClick.bind(this)}>{(this.state.startTime === undefined) ? "Start Timer" : "Stop Timer"}</button>
+        <button type="button" className="btn btn-info" onClick={this.handleClick}>{(this.state.startTime === undefined) ? "Start Timer" : "Stop Timer"}</button>
         {/* {this.state.data.map(doc => {
           return (
             <div>
