@@ -15,3 +15,27 @@
 .loadingScreen.active {
   display: flex;
 } */
+
+.history {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-bottom: none;
+}
+
+.history:nth-child(2n) {
+  background: #eee;
+}
+
+.history:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.history .meter {
+  border: 1px solid tomato;
+  margin: 5px;
+  background: tomato;
+  border-radius: 5px;
+  height: 5px;
+}
